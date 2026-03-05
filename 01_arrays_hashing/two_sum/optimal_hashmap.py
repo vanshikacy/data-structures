@@ -1,13 +1,15 @@
 def twoSum(nums, target):
-        #ts my brute force les go
+    seen={}
 
-        for i in range(0, len(nums)):
-            for j in range(i+1, len(nums)):
-                if nums[i]+nums[j]==target:
-                    return [i, j]
+    for i, n in enumerate(nums):
+        partner=target-n
 
-        return None
+        if partner in seen:
+            return [seen[partner], i]
+        
+        seen[n]=i
 
+    return None
 
 def main():
     text=input("enter nums separated by spaces:")
@@ -29,11 +31,3 @@ def main():
 
 if __name__=="__main__":
      main()
-
-
-
-
-    
-
-
-    
